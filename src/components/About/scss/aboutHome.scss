@@ -1,0 +1,118 @@
+@import "../../../scss/mixins.scss";
+
+.about {
+    padding: 30px 0px;
+    margin: 30px 0px;
+
+    .item {
+        @include flex-column;
+        width: 100%;
+
+        img {
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        span {
+            font-size: 18px;
+        }
+    }
+
+    .about-row {
+        .col-12 {
+            margin-bottom: 50px
+        }
+
+        .about-side-content {
+            @include flex-column;
+            align-items: flex-start;
+            padding: 0px 10px;
+
+            .text {
+                margin-bottom: 20px;
+                max-width: 700px;
+            }
+
+            .btn-about {
+                max-width: 240px;
+                min-width: 180px;
+                width: 100%;
+                color: #fff;
+                background-color: #ca3d26;
+                font-size: 18px;
+                font-weight: 500;
+                padding: 12px 0px;
+                text-decoration: none;
+                @include flex-box;
+            }
+
+            @keyframes pulse {
+                0% {
+                    box-shadow: 0 0 0 0 #ca3d26;
+                }
+
+                80% {
+                    box-shadow: 0 0 0 10px hsla(0, 100%, 76%, 0);
+                }
+
+                100% {
+                    box-shadow: 0 0 0 0 hsla(0, 100%, 76%, 0);
+                }
+
+            }
+
+            .btn-about:hover {
+                animation: pulse 1s ease infinite;
+                background-color: #ca3d26;
+                border-color: #ca3d26;
+                color: #fff;
+            }
+        }
+
+        .about-side-img {
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+    .why-us {
+        .row .col-12 {
+            margin-bottom: 50px;
+        }
+    }
+
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .about {
+        .why-us .row {
+            justify-content: center;
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .about {
+        .about-row {
+            flex-direction: column-reverse;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 576px) {
+    .about {
+        .about-row {
+            flex-direction: column-reverse;
+        }
+    }
+
+}

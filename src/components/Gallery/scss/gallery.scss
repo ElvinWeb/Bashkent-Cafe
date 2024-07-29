@@ -1,0 +1,110 @@
+@import "../../../scss/mixins.scss";
+
+.gallery {
+    padding: 50px 0px;
+
+    .gallery-filter-buttons {
+        @include flex-row;
+        margin: 20px 0px;
+        padding: 20px;
+        width: 100%;
+
+        .filter-btn {
+            background: transparent;
+            font-size: 21px;
+            font-weight: 600;
+            padding: 10px 25px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+        .filter-btn:hover {
+            color: #ca3d26;
+        }
+
+        .filter-btn.active {
+            background-color: #ca3d26;
+            color: #fff;
+        }
+    }
+
+    @include fade-animation;
+
+    .gallery-container,
+    .menu-container {
+        justify-content: center !important;
+    
+
+        &.active-gallery {
+            display: flex;
+            animation: fade 1s ease;
+        }
+
+        .col-12 {
+            @include flex-row;
+            margin-bottom: 30px;
+        }
+
+        .gallery-card::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            @include position-absolute;
+            transition: all 0.2s ease-in;
+            opacity: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .gallery-card:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-card:hover a {
+            opacity: 1;
+        }
+
+        .menu-card {
+            height: 100% !important;
+            max-width: 100% !important;
+
+            .menu-img {
+                height: 100%;
+                object-fit: cover !important;
+                width: 100% !important;
+            }
+        }
+
+        .gallery-card {
+            height: 300px;
+            max-width: 500px;
+            position: relative;
+            width: 100%;
+
+            a {
+                @include flex-row;
+                background-color: #ca3d26;
+                border-radius: 50%;
+                color: #fff;
+                font-size: 20px;
+                min-width: 60px;
+                min-height: 60px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-decoration: none;
+                z-index: 10;
+                opacity: 0;
+                transition: all 0.2s ease-in;
+
+            }
+
+            img {
+                height: 100%;
+                object-fit: cover;
+                width: 100%;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@import "../../../scss/mixins.scss";
+@import './header-bg.scss';
+@import './NavBar.scss';
+@import "./Navigation.scss";
+@import "./header-content.scss";
+
+.header {
+    height: 100%;
+    max-height: 85vh;
+    min-height: 80vh;
+    position: relative;
+    width: 100%;
+}
+
+.active {
+    color: #fff !important;
+    background-color: #ca3d26 !important;
+    padding: 10px 20px !important;
+    border-radius: 10px;
+}

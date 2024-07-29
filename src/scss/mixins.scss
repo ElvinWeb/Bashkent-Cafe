@@ -1,0 +1,72 @@
+@mixin flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+@mixin flex-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@mixin flex-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin position-absolute {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+@mixin position-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+@mixin pulse-animation {
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 #ca3d26;
+        }
+
+        80% {
+            box-shadow: 0 0 0 10px hsla(0, 100%, 76%, 0);
+        }
+
+        100% {
+            box-shadow: 0 0 0 0 hsla(0, 100%, 76%, 0);
+        }
+
+    }
+}
+
+@mixin slideDown-animation {
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+        }
+
+        to {
+            transform: translateY(0);
+        }
+    }
+}
+
+@mixin fade-animation {
+    @keyframes fade {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+}

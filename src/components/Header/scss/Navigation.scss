@@ -1,0 +1,189 @@
+@import "../../../scss/mixins.scss";
+@include slideDown-animation;
+
+.bottom-nav {
+    .inner {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            max-width: 200px;
+            margin-right: 15px;
+            display: none;
+
+            @media only screen and (min-width: 1200px) {
+                display: block;
+            }
+
+            img {
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .black-overlay {
+            background-color: rgba(0, 0, 0, .7);
+            position: fixed;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            visibility: hidden;
+            min-height: 100vh;
+            height: 100%;
+            width: 100%;
+            z-index: 990;
+
+            &.open-bg {
+                opacity: 1;
+                visibility: visible;
+                transition: opacity 0.4s ease-in;
+            }
+        }
+    }
+
+}
+
+.bottom-nav.fixed-top {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    animation: slideDown 0.4s ease-out;
+
+    .link {
+        @media only screen and (min-width: 1200px) {
+            color: #000 !important;
+        }
+    }
+}
+
+.nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    max-width: 400px;
+    min-height: 100vh;
+    background-color: #000;
+    z-index: 999;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    @media only screen and (min-width: 1200px) {
+        position: relative;
+        left: 0;
+        background-color: transparent;
+        min-height: 50px;
+        max-width: 100%;
+        opacity: 1;
+
+    }
+
+    &.open {
+        left: 0%;
+        opacity: 1;
+        transition: opacity 0.4s ease-in;
+    }
+
+    .nl-header {
+        @include flex-row;
+        justify-content: space-between;
+        margin-bottom: 35px;
+        margin-top: 15px;
+        width: 100%;
+
+        .close-btn {
+            background: transparent;
+            color: #ca3d26;
+            font-size: 32px;
+        }
+
+        .side-logo {
+            max-width: 200px;
+
+            img {
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .nl-body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        max-height: 85vh;
+        overflow: auto;
+        padding-bottom: 80px;
+
+        @media only screen and (min-width: 1200px) {
+            padding-bottom: 0;
+        }
+
+        .links {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            // margin-bottom: 15px;
+
+            @media only screen and (min-width: 1200px) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #fff;
+                padding: 20px 0px;
+            }
+
+            .link {
+                color: #fff;
+                font-size: 18px;
+                padding: 10px 0;
+                margin-bottom: 12px;
+                text-decoration: none;
+
+                &.link-active {
+                    background-color: #ca3d26;
+                    padding: 10px 15px;
+                    color: #fff !important;
+                }
+
+                @media only screen and (min-width: 1200px) {
+                    margin-bottom: 0;
+                }
+            }
+
+            .btn-reserv {
+                padding: 12px 25px;
+            }
+
+        }
+
+        .social-icons {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            margin-top: 20px;
+
+            a {
+                color: #fff;
+                font-size: 18px;
+                height: 40px;
+                padding: 10px;
+                width: 40px;
+                @include flex-box;
+                text-decoration: none;
+            }
+        }
+    }
+}

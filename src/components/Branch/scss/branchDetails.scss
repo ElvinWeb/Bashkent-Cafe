@@ -1,0 +1,50 @@
+@import "../../../scss/mixins.scss";
+
+.filial-details {
+    padding: 40px 0px;
+
+    .container {
+        @include flex-column;
+        align-items: normal;
+
+        .col-12 {
+            @include flex-row;
+            align-items: flex-start;
+
+            .content {
+                @include flex-column;
+                text-align: center;
+                width: 100%;
+
+                @media only screen and (min-width: 992px) {
+                    align-items: flex-start;
+                    text-align: start;
+                }
+
+                .title {
+                    margin-bottom: 20px;
+
+                    @media only screen and (max-width:992px) {
+                        margin-top: 20px;
+                    }
+                }
+
+                .text {
+                    font-size: 17px;
+                }
+            }
+
+            .filial-img {
+                max-width: 500px;
+                min-height: 200px;
+                width: 100%;
+
+                img {
+                    object-fit: contain;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

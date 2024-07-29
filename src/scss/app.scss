@@ -1,0 +1,34 @@
+@import '../components/Header/scss/header.scss';
+@import "../components/About/scss/aboutHome.scss";
+@import "../components/Branch/scss/branch.scss";
+@import "../components/Food-category/scss/FoodCategory.scss";
+@import "../components/Partners/scss/Partners.scss";
+@import "../components/Blogs/scss/blog.scss";
+@import "../components/Gallery/scss/gallery.scss";
+@import "../components/Comment/scss/comment.scss";
+@import "../components/Contact/scss/contact.scss";
+@import "../components/Footer/scss/footer.scss";
+@import "../components/Title/scss/title.scss";
+@import "../components/Error/scss/error.scss";
+@import "../components/Foods/scss/food.scss";
+@import "../components/Branch/scss/branchDetails.scss";
+@import "../components/Blogs/scss/blogDetails.scss";
+@import "../components/Search/scss/searchResult.scss";
+@import "./mixins.scss";
+@import "./reset.scss";
+@import "./colors.scss";
+
+.section-title {
+    text-align: center;
+    @include flex-column;
+
+    .title {
+        font-size: 45px;
+    }
+
+    img {
+        max-width: 210px;
+        object-fit: contain;
+        transform: translateY(-30px) scale(0.9);
+    }
+}

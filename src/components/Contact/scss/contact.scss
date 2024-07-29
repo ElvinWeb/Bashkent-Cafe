@@ -1,0 +1,70 @@
+@import "../../../scss/mixins.scss";
+
+.contact {
+    margin: 50px 0px;
+
+    .container {
+        @include flex-column;
+
+        .row {
+            width: 100%;
+        }
+    }
+
+    .map {
+        width: 100%;
+
+        iframe {
+            min-height: 400px;
+            width: 100%;
+
+            @media only screen and (min-width:992px) {
+                min-height: 600px;
+
+            }
+        }
+    }
+
+    .col-12 {
+        @include flex-row;
+        margin-bottom: 40px;
+    }
+
+    .form-general {
+        padding: 30px;
+        @include flex-column;
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+
+        input {
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, .2);
+            margin-bottom: 25px;
+            outline: none;
+            padding: 12px 15px;
+            width: 100%;
+
+            &:focus {
+                border-color: #ca3d26;
+            }
+        }
+
+        #message-text {
+            border: 1px solid rgba(0, 0, 0, .2);
+            resize: none;
+            min-height: 150px;
+            width: 100%;
+            padding: 12px 15px;
+            outline: none;
+            margin-bottom: 25px;
+
+            &:focus {
+                border-color: #ca3d26;
+            }
+        }
+
+        .btn-submit {
+            align-self: flex-start;
+        }
+    }
+}

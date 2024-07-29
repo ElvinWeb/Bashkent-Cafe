@@ -1,0 +1,70 @@
+@import "../../../scss/mixins.scss";
+
+.filial {
+    padding: 40px 30px;
+    margin-bottom: 40px;
+
+    .swiper .swiper-slide {
+        @include flex-row;
+        width: 100%;
+    }
+
+    .filial-card {
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        height: 250px;
+        max-width: 420px;
+
+
+        .filial-img::after {
+            content: "";
+            background-color: rgba(0, 0, 0, .3);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .filial-img {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transform: scale(1);
+                transition: all 0.3s ease;
+            }
+
+        }
+
+        .filial-title {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            font-weight: 600;
+            font-size: 22px;
+            color: #fff;
+        }
+    }
+
+    .filial-card:hover .filial-img img {
+        transform: scale(1.2);
+    }
+}
+
+
+@media only screen and (max-width: 576px) {
+    .filial {
+        .filial-card {
+            max-width: 330px;
+        }
+    }
+
+}

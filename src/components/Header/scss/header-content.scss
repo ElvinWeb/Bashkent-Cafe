@@ -1,0 +1,118 @@
+@import "../../../scss/mixins.scss";
+
+.header-content {
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    @include flex-column;
+    min-height: 55vh;
+
+    .page-title {
+        @include flex-column;
+        width: 100%;
+
+        .title {
+            color: #fff;
+            font-size: 65px;
+            text-align: center;
+            @media only screen and (max-width:1200px) {
+                font-size: 50px;
+            }
+
+            @media only screen and (max-width:992px) {
+                font-size: 35px;
+            }
+        }
+
+        img {
+            max-width: 200px;
+            width: 100%;
+        }
+
+        .root-links {
+            @include flex-row;
+            color: #fff;
+            font-size: 14px;
+            margin-top: 20px;
+
+            i {
+                padding: 0 10px;
+            }
+
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 16px;
+            }
+
+            @media only screen and (max-width:576px) {
+                display: none;
+            }
+
+        }
+
+    }
+
+    .content {
+        text-align: center;
+        @include flex-column;
+
+        &-title {
+            font-size: 67px;
+            color: #fff;
+            margin-bottom: 35px;
+        }
+
+        .btn-general {
+            font-size: 26px;
+            font-weight: 600;
+            min-width: 180px;
+            padding: 12px 30px;
+            text-decoration: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 #ca3d26;
+            }
+
+            80% {
+                box-shadow: 0 0 0 10px hsla(0, 100%, 76%, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 hsla(0, 100%, 76%, 0);
+            }
+
+        }
+
+        .btn-general:hover {
+            animation: pulse 1s ease infinite;
+            background-color: #ca3d26;
+            border-color: #ca3d26;
+            color: #fff;
+
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .header-content {
+        margin: 20px 0px;
+
+        .content {
+            &-title {
+                font-size: 40px;
+            }
+        }
+
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .content {
+        &-title {
+            font-size: 34px !important;
+        }
+    }
+}

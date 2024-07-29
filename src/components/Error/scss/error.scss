@@ -1,0 +1,29 @@
+@import "../../../scss/mixins.scss";
+@import "../../../scss/colors.scss";
+
+.error {
+    padding: 40px 0px;
+    margin-bottom: 30px;
+
+
+    .not-found,
+    .container {
+        @include flex-column;
+        width: 100%;
+
+        .text {
+            font-size: 110px;
+            color: $button-hover-color;
+        }
+
+        a {
+            @include flex-box;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            background-color: $button-hover-color;
+            color: aliceblue;
+        }
+    }
+
+}
